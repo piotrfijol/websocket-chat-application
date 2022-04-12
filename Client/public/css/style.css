@@ -1,12 +1,59 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;700&display=swap");
+body, p {
   margin: 0;
   padding: 0;
+  background-color: #CCC;
+}
+
+.wrapper {
+  padding: 150px;
 }
 
 .chat {
   width: 650px;
-  height: 800px;
-  border: 1px solid #000;
+  height: 700px;
+  box-shadow: 1px 0 4px 0 #000;
+  margin: auto;
+  font-family: "Work Sans";
+}
+.chat__room-name {
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  background-color: rgb(82, 102, 204);
+  color: #FFF;
+  box-sizing: border-box;
+}
+.chat__room-name p {
+  background-color: inherit;
+}
+.chat__message-box {
+  width: 100%;
+  overflow-y: scroll;
+  height: 570px;
+  background-color: #FFF;
+}
+.chat__inputs {
+  height: 80px;
+  width: 100%;
+  background-color: #DDD;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.chat__inputs input {
+  width: 75%;
+  font-size: 16px;
+  padding: 8px;
+}
+.chat__inputs button {
+  display: inline-block;
+  width: 20%;
+  padding: 11px 0;
+  background-color: rgb(93, 131, 213);
+  color: #FFF;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */
