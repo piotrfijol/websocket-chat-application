@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;700&display=swap");
+@font-face {
+  font-family: "Lobster";
+  src: url("http://localhost:3000/assets/Lobster-Regular.ttf") format("ttf");
+}
 body, p {
   margin: 0;
   padding: 0;
@@ -6,7 +10,39 @@ body, p {
 }
 
 .wrapper {
-  padding: 150px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: "Lobster";
+  font-size: 96px;
+}
+
+.description {
+  font-size: 28px;
+  font-family: "Work Sans";
+  background: inherit;
+}
+
+.btn {
+  margin-top: 40px;
+  font-family: "Work Sans";
+  border: none;
+  border-radius: 4px;
+  padding: 20px 65px;
+  background-color: rgb(65, 118, 209);
+  color: #FFF;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(123, 159, 221);
 }
 
 .chat {
@@ -48,6 +84,9 @@ body, p {
   display: inline;
   background: inherit;
 }
+.chat__message-box__message__content {
+  word-wrap: break-word;
+}
 .chat__message-box__message__username {
   font-weight: 700;
 }
@@ -75,6 +114,10 @@ body, p {
   border: none;
   border-radius: 3px;
   font-weight: 500;
+}
+.chat__inputs button:hover {
+  cursor: pointer;
+  background-color: rgb(130, 159, 222);
 }
 
 /*# sourceMappingURL=style.css.map */

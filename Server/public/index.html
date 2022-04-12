@@ -4,47 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="wrapper">
-        <div class="chat">
-            <div class="chat__room-name">
-                <p>Room name</p>
-            </div>
-            <div class="chat__message-box">
-                <div class="chat__message-box__message">
-                    <p class="chat__message-box__message__username">username:</p>
-                    <p class="chat__message-box__message__content">
-                        Message content goes here
-                    </p>
-                </div>
-                <div class="chat__message-box__message">
-                    <p class="chat__message-box__message__username">username:</p>
-                    <p class="chat__message-box__message__content">
-                        Message content goes here
-                    </p>
-                </div>
-                <div class="chat__message-box__message">
-                    <p class="chat__message-box__message__username">username:</p>
-                    <p class="chat__message-box__message__content">
-                        Message content goes here
-                    </p>
-                </div>
-                <div class="chat__message-box__message">
-                    <p class="chat__message-box__message__username">username:</p>
-                    <p class="chat__message-box__message__content">
-                        Message content goes here
-                    </p>
-                </div>
-            </div>
-            <div class="chat__inputs">
-                <input type="text" id="message" placeholder="Enter message..." name="" id="">
-                <button id="send-message">Send</button>
-            </div>
-        </div>
+<body style="background: #FFF">
+    <div class="wrapper" style="margin-top: -60px;">
+        <h1 class="title">ChatApp</h1>
+        <p class="description">Dynamic chat rooms for your daily quick chat with friends</p>
+        <a href="/create"><button class="btn">Create room</button></a>
     </div>
-    <script src="app.js"></script>
+
+    <script src="index.js"></script>
 </body>
 </html>
