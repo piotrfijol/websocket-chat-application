@@ -51,6 +51,9 @@ body, p {
 .chat__message-box__message__username {
   font-weight: 700;
 }
+.chat__message-box__message__username::after {
+  content: ": ";
+}
 .chat__inputs {
   height: 80px;
   width: 100%;
