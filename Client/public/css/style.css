@@ -33,6 +33,24 @@ body, p {
   height: 570px;
   background-color: #FFF;
 }
+.chat__message-box__message:nth-child(odd) {
+  background-color: rgb(222, 225, 233);
+}
+.chat__message-box__message:nth-child(even) {
+  background-color: rgb(244, 246, 250);
+}
+.chat__message-box__message {
+  min-height: 40px;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+.chat__message-box__message__username, .chat__message-box__message__content {
+  display: inline;
+  background: inherit;
+}
+.chat__message-box__message__username {
+  font-weight: 700;
+}
 .chat__inputs {
   height: 80px;
   width: 100%;

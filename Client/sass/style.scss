@@ -35,6 +35,30 @@ body, p {
         overflow-y: scroll;
         height: 570px;
         background-color: #FFF;
+
+        &__message:nth-child(odd) {
+            background-color:rgb(222, 225, 233);
+        }
+        
+        &__message:nth-child(even) {
+            background-color:rgb(244, 246, 250);
+        }
+
+        &__message {
+            min-height: 40px;
+            padding: 20px 15px;
+            box-sizing: border-box;
+
+            &__username, &__content {
+                display: inline;
+                background: inherit;
+            }
+
+            &__username {
+                font-weight: 700;
+            }
+        }
+        
     }
 
     &__inputs {
@@ -59,6 +83,7 @@ body, p {
             border: none;
             border-radius: 3px;
             font-weight: 500;
+
         }
     }
 }
