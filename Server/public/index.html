@@ -5,8 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
+    <link type="text/css" href="./css/style.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Hello there!</h1>
+    <div class="wrapper">
+        <div class="chat">
+            <div class="chat__room-name">
+                <p>Room name</p>
+            </div>
+            <div class="chat__message-box">
+                <div class="chat__message-box__message">
+                    <p class="chat__message-box__message__username">username:</p>
+                    <p class="chat__message-box__message__content">
+                        Message content goes here
+                    </p>
+                </div>
+                <div class="chat__message-box__message">
+                    <p class="chat__message-box__message__username">username:</p>
+                    <p class="chat__message-box__message__content">
+                        Message content goes here
+                    </p>
+                </div>
+                <div class="chat__message-box__message">
+                    <p class="chat__message-box__message__username">username:</p>
+                    <p class="chat__message-box__message__content">
+                        Message content goes here
+                    </p>
+                </div>
+                <div class="chat__message-box__message">
+                    <p class="chat__message-box__message__username">username:</p>
+                    <p class="chat__message-box__message__content">
+                        Message content goes here
+                    </p>
+                </div>
+            </div>
+            <div class="chat__inputs">
+                <input type="text" id="message" placeholder="Enter message..." name="" id="">
+                <button id="send-message">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
