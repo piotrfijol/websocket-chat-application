@@ -1,0 +1,74 @@
+@use './partials/common';
+
+.title {
+    font-family: "Lobster";
+    font-size: 90px;
+    animation: fadeIn .9s ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+
+.animated-text-field {
+    min-width: 610px;
+    min-height: 30px;
+    padding: 15px;
+    background-color: rgb(236, 238, 240);
+    border-radius: 6px;
+    border: 2px solid #666;
+
+}
+
+
+@keyframes blink {
+    0% {background-color: inherit;}
+    14% {background-color: inherit;}
+    15% {background-color: #000;}
+    85% {background-color: #000;}
+    86% {background-color: inherit;}
+    100% {background-color: inherit;}
+}
+
+
+
+    .description {
+    display: inline-block;
+    font-size: 21px;
+    transform: translateY(-8px);
+    font-family: "Work Sans";
+    background: inherit;
+    }
+
+    .description::after {
+        content: '';
+        display: inline-block;
+        transform: translateY(25%);
+        font-size: 21px;
+        height: 1.5em;
+        width: 2px;
+        background-color: #000;
+        animation-name: blink;
+        animation-timing-function: ease-in;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+    
+    .btn {
+        margin-top: 42px;
+        font-family: "Work Sans";
+        border: none;
+        border-radius: 4px;
+        padding: 14px 55px;
+        background-color: rgb(44, 100, 197);
+        color: #FFF;
+        font-size: 21px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(99, 138, 206);
+    }

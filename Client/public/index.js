@@ -15,7 +15,7 @@
   \******************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://Client/./index.js?");
+eval("setTimeout(\r\n    typingAnimation,\r\n    500, \r\n    document.querySelector(\".description\"),\r\n    \"Dynamic chat rooms for your daily quick chat with friends\",\r\n    0\r\n    );\r\n\r\nfunction typingAnimation(field, text) {\r\n    let i = 0;\r\n    let interval;\r\n\r\n    function type() {\r\n        \r\n        if(field.textContent === text) {\r\n            clearInterval(interval);\r\n            return;\r\n        }\r\n\r\n        field.textContent += text[i++];\r\n    } \r\n    interval = setInterval(type, 70);\r\n\r\n\r\n}\n\n//# sourceURL=webpack://Client/./index.js?");
 
 /***/ })
 
