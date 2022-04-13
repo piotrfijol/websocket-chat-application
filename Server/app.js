@@ -3,12 +3,13 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 const { randomBytes } = require('crypto');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
+const HOST = '127.0.0.1';
 
 const path = require("path");
 const app = express();
 const httpServer = createServer(app);
-const io = new Server(httpServer, { port: PORT, hostname: '127.0.0.1' });
+const io = new Server(httpServer, { port: PORT, hostname: HOST });
 
 const rooms = {
 };
@@ -19,9 +20,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/channel", (req, res) => {
-
-    res.setHeader('Content-Type', 'text/html');
-    res.sendFile(path.resolve(__dirname, 'public/chat.html'));
+    if(rooms[req.query.id]) {
+        res.setHeader('Content-Type', 'text/html');
+        res.sendFile(path.resolve(__dirname, 'public/chat.html'));
+    } else {
+        res.setHeader('Content-Type', 'text/html');
+        res.sendFile(path.resolve(__dirname, 'public/error404.html'));
+    }
 })
 
 app.get("/create", (req, res) => {
@@ -33,7 +38,7 @@ app.get("/create", (req, res) => {
 
     rooms[randomString] = [];
 
-    res.location("http://localhost:3000/channel?id=" + randomString);
+    res.location(`/channel?id=${randomString}`);
     res.sendStatus(302);
 });
 
