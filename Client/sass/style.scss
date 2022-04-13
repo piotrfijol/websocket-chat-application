@@ -22,30 +22,53 @@ body, p {
 
 .title {
     font-family: "Lobster";
-    font-size: 96px;
+    font-size: 90px;
+    animation: fadeIn .9s ease-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
   }
   
   .description {
-    font-size: 28px;
+    font-size: 21px;
     font-family: "Work Sans";
     background: inherit;
   }
   
   .btn {
-    margin-top: 40px;
+    margin-top: 36px;
     font-family: "Work Sans";
     border: none;
     border-radius: 4px;
-    padding: 20px 65px;
-    background-color: rgb(65, 118, 209);
+    padding: 22px 65px;
+    background-color: rgb(44, 100, 197);
     color: #FFF;
-    font-size: 24px;
+    font-size: 21px;
     cursor: pointer;
   }
   
   .btn:hover {
-    background-color: rgb(123, 159, 221);
+    background-color: rgb(99, 138, 206);
   }
+
+#room-name {
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#room-name:hover {
+    text-decoration: underline;
+}
+
+#copy-icon {
+    margin-top: -15px;
+    font-size: 11px;
+    transform: translateY(-6px);
+}
 
 .chat {
     width: 650px;

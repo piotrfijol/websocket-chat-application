@@ -4,14 +4,22 @@ import {io} from 'socket.io-client';
 let queryParams = new URLSearchParams(window.location.search);
 
 if(queryParams.get('id')) {
+
+    const roomNameBar = document.getElementById("room-name");
+    roomNameBar.textContent = queryParams.get("id");
     
     const socket = io("/channel", {
         query: 'id='+ queryParams.get('id')
     });
 
+
     const sendMessageBtn = document.querySelector("#send-message");
     const messageContent = document.querySelector("input#message")
+    const messageBox = document.querySelector(".chat__message-box");
 
+    roomNameBar.addEventListener('click', e => {
+        navigator.clipboard.writeText(window.location.href);
+    })
 
     sendMessageBtn.addEventListener('click', () => {
         sendMessage(messageContent);
@@ -37,7 +45,6 @@ if(queryParams.get('id')) {
         }
     }
 
-    const messageBox = document.querySelector(".chat__message-box");
 
     function newMessage(msg) {
         const newMsg = document.createElement("div");
@@ -45,7 +52,7 @@ if(queryParams.get('id')) {
         
         const msgUsername = document.createElement("p");
         msgUsername.classList = "chat__message-box__message__username";
-        msgUsername.textContent = "username";
+        msgUsername.textContent = "Anonymous";
 
         const msgContent = document.createElement("p");
         msgContent.classList = "chat__message-box__message__content";
@@ -54,5 +61,7 @@ if(queryParams.get('id')) {
         newMsg.appendChild(msgUsername);
         newMsg.appendChild(msgContent);
         messageBox.appendChild(newMsg);
+
+        messageBox.scrollTop = messageBox.scrollHeight;
     }
 }
