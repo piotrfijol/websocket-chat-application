@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="/css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
-<body style="background: #FFF">
-    <div class="wrapper" style="margin-top: -60px;">
+<body>
+    <nav class="navbar">
+        <div id="nightmode" class="nightmode navbar__item">
+            <input autocomplete="off" type="checkbox" name="" id="nightmode-toggle">
+            <label id="nightmode-toggle-label" for="nightmode-toggle"></label>
+        </div>
+        <div class="github navbar__item">git</div>
+    </nav>
+    <div class="wrapper">
         <h1 class="title">ChatApp</h1>
         <div class="animated-text-field">
             <p class="description"></p>
@@ -18,5 +25,6 @@
     </div>
 
     <script src="index.js"></script>
+    <script src="nightmode.js"></script>
 </body>
 </html>

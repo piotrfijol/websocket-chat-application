@@ -1,4 +1,27 @@
 @use './partials/common';
+@use './partials/navbar';
+
+:root {
+    --chat-frame: rgb(82, 102, 204);
+    --message-box: #FFF;
+    --message-odd: rgb(222, 225, 233);
+    --message-even:  rgb(244, 246, 250);
+    --chat-accent: rgb(58, 107, 213);
+    --message-inputs: #DDD;
+    --message-input: #FFF;
+    --message-text: #000;
+}
+
+body.nightmode {
+    --chat-frame: rgb(42 45 58);
+    --message-box: #333840;
+    --message-odd: rgb(67 72 86);
+    --message-even:  rgb(244, 246, 250);
+    --chat-accent: rgb(58, 107, 213);
+    --message-inputs: #252d3c;
+    --message-text: #DDD;
+    --message-input: #DDD;
+}
 
 #room-name {
     font-weight: 600;
@@ -27,7 +50,7 @@
         width: 100%;
         height: 50px;
         padding: 15px;
-        background-color: rgb(82, 102, 204);
+        background-color: var(--chat-frame);
         color: #FFF;
         box-sizing: border-box;
 
@@ -40,14 +63,14 @@
         width: 100%;
         overflow-y: scroll;
         height: 570px;
-        background-color: #FFF;
+        background-color: var(--message-box);
 
         &__message:nth-child(odd) {
-            background-color:rgb(222, 225, 233);
+            background-color:var(--message-odd);
         }
         
         &__message:nth-child(even) {
-            background-color:rgb(244, 246, 250);
+            background-color:var(--message-even);
         }
 
         &__message {
@@ -55,6 +78,7 @@
             padding: 20px 15px;
             box-sizing: border-box;
             position: relative;
+            color: var(--message-text);
 
             &__username, &__content {
                 display: inline;
@@ -75,7 +99,7 @@
 
             &__date {
                 font-size: 12px;
-                color: #444;
+                color: var(--message-text);
                 background-color: inherit;
                 margin-left: auto;
                 position: absolute;
@@ -89,7 +113,7 @@
     &__inputs {
         height: 80px;
         width: 100%;
-        background-color: #DDD;
+        background-color: var(--message-inputs);
         padding: 15px;
         box-sizing: border-box;
 
@@ -97,6 +121,7 @@
             width: 75%;
             font-size: 16px;
             padding: 8px;
+            background: var(--message-input);
         }
 
         button {

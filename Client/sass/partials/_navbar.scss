@@ -1,0 +1,61 @@
+.navbar {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+
+    &__item {
+        margin-right: 35px;
+    }
+    &__item:last-child {
+    }
+
+}
+
+
+#nightmode {
+    width: 60px;
+    height: 20px;
+
+    label {
+        display: inline-block;
+        width: 50px;
+        height: 20px;
+        background-color: #FFF;    
+        border-radius: 10px;
+        box-shadow: inset 0 0 9px 0 #DDD, 0 0 3px 0 #555;
+        position: relative;
+        transition: background .1s ease-in-out;
+        cursor: pointer;
+    }
+
+    label::before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 6px;
+        top: 2px;
+        display: block;
+        background-color: #EEE;
+        box-shadow: 0 0 3px 0 #000;
+        border-radius: 50%;
+        transition: left .3s ease-in-out;
+    }
+
+    input:checked + label::before {
+        left: 28px;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    input:checked + label {
+        background-color: #000;
+        box-shadow: inset 0 0 9px 0 rgb(84, 84, 84), 0 0 3px 0 rgb(23, 22, 22);
+    }
+}

@@ -1,4 +1,10 @@
 @use './partials/common';
+@use './partials/navbar';
+
+
+.wrapper {
+    margin-top: -60px;
+}
 
 .title {
     font-family: "Lobster";
@@ -6,7 +12,8 @@
     animation: fadeIn .9s ease-out;
     animation-fill-mode: forwards;
     opacity: 0;
-  }
+    color: var(--accent-color);
+}
   
   @keyframes fadeIn {
     to { opacity: 1; }
@@ -17,7 +24,7 @@
     min-width: 610px;
     min-height: 30px;
     padding: 15px;
-    background-color: rgb(236, 238, 240);
+    background-color: #FFF;
     border-radius: 6px;
     border: 2px solid #666;
 
@@ -67,6 +74,7 @@
         color: #FFF;
         font-size: 21px;
         cursor: pointer;
+        box-shadow: 2px 2px 4px 0 var(--accent-contrast-color);
     }
 
     .btn:hover {
