@@ -30,6 +30,11 @@ body {
   --accent-contrast-color: #000;
 }
 
+body.nightmode .navbar__item.github {
+  background: url("../assets/img/GitHub-Mark-Light-64px.png");
+  background-size: cover;
+}
+
 .navbar {
   width: 100vw;
   height: 80px;
@@ -41,6 +46,12 @@ body {
 }
 .navbar__item {
   margin-right: 35px;
+}
+.navbar__item.github {
+  width: 40px;
+  height: 40px;
+  background: url("../assets/img/GitHub-Mark-64px.png");
+  background-size: cover;
 }
 #nightmode {
   width: 60px;

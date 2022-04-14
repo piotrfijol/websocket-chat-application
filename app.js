@@ -4,7 +4,7 @@ const { Server } = require("socket.io");
 const { randomBytes } = require('crypto');
 
 const PORT = process.env.PORT || 5000;
-const HOST = '127.0.0.1';
+const HOST = 'quick-chat-test.herokuapp.com';
 
 const path = require("path");
 const app = express();
