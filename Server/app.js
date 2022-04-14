@@ -47,6 +47,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 io.of("/channel").on("connection", (socket) => {
     console.log("New connection");
+    socket.username = "user-" + randomBytes(2).toString("hex");
 
     if(!rooms[socket.handshake.query.id])
         return;
@@ -55,18 +56,22 @@ io.of("/channel").on("connection", (socket) => {
 
     socket.on("message", (data) => {
         const message = data.message.slice(0, 350);
+        const date = (new Date()).toLocaleString().replace(".", "-");
 
-        console.log("[MESSAGE]: " + (new Date().toISOString()) + " says " + message);
+        console.log("[MESSAGE]: " + date + " says " + message);
 
         for(let i=0; i<rooms[data.room].length; i++) {
             let s = rooms[data.room][i];
             s.emit("message", {
                 message,
+                date,
+                username: socket.username
             })
         }
     })
 
     socket.on("disconnecting", () => {
+        console.log(socket.username);
         let room = socket.handshake.query.id;
         let index = rooms[room].findIndex(el => el.id === socket.id);
         

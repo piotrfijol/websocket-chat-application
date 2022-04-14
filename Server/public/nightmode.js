@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
+/***/ "./nightmode.js":
+/*!**********************!*\
+  !*** ./nightmode.js ***!
+  \**********************/
 /***/ (() => {
 
-eval("setTimeout(\r\n    typingAnimation,\r\n    500, \r\n    document.querySelector(\".description\"),\r\n    \"Dynamic chat rooms for your daily quick chat with friends\",\r\n    0\r\n    );\r\n\r\nfunction typingAnimation(field, text) {\r\n    let i = 0;\r\n    let interval;\r\n\r\n    function type() {\r\n        \r\n        if(field.textContent === text) {\r\n            clearInterval(interval);\r\n            return;\r\n        }\r\n\r\n        field.textContent += text[i++];\r\n    } \r\n    interval = setInterval(type, 70);\r\n\r\n\r\n}\n\n//# sourceURL=webpack://Client/./index.js?");
+eval("const themeToggle = document.getElementById(\"nightmode-toggle\");\r\n\r\nif(!localStorage.getItem('nightmode')) {\r\n    localStorage.setItem('nightmode', 'false');\r\n} else {\r\n    if(localStorage.getItem(\"nightmode\") === \"true\") {\r\n        themeToggle.checked = true;\r\n        document.body.classList.toggle('nightmode');\r\n    } else {\r\n        document.body.classList.remove('nightmode');\r\n    }\r\n}\r\n\r\n\r\nthemeToggle.addEventListener('click', () => {\r\n    document.body.classList.toggle('nightmode');\r\n    localStorage.setItem('nightmode', localStorage.getItem(\"nightmode\") === \"true\" ? \"false\" : \"true\");\r\n});\r\n\r\n\n\n//# sourceURL=webpack://Client/./nightmode.js?");
 
 /***/ })
 
@@ -26,7 +26,7 @@ eval("setTimeout(\r\n    typingAnimation,\r\n    500, \r\n    document.querySele
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./index.js"]();
+/******/ 	__webpack_modules__["./nightmode.js"]();
 /******/ 	
 /******/ })()
 ;

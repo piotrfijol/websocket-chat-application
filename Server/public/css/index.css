@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;700&display=swap");
+body, p {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #EFEFEF;
+  --accent-color: rgb(47, 50, 53);
+  --accent-contrast-color: #888;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nightmode {
+  --primary-color: rgb(33, 37, 41);
+  --secondary-color: rgb(47, 50, 53);
+  --accent-color: rgb(223, 223, 223);
+  --accent-contrast-color: #000;
+}
+
+.navbar {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+.navbar__item {
+  margin-right: 35px;
+}
+#nightmode {
+  width: 60px;
+  height: 20px;
+}
+#nightmode label {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #FFF;
+  border-radius: 10px;
+  box-shadow: inset 0 0 9px 0 #DDD, 0 0 3px 0 #555;
+  position: relative;
+  transition: background 0.1s ease-in-out;
+  cursor: pointer;
+}
+#nightmode label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  display: block;
+  background-color: #EEE;
+  box-shadow: 0 0 3px 0 #000;
+  border-radius: 50%;
+  transition: left 0.3s ease-in-out;
+}
+#nightmode input:checked + label::before {
+  left: 28px;
+}
+#nightmode input[type=checkbox] {
+  display: none;
+}
+#nightmode input:checked + label {
+  background-color: #000;
+  box-shadow: inset 0 0 9px 0 rgb(84, 84, 84), 0 0 3px 0 rgb(23, 22, 22);
+}
+
+.wrapper {
+  margin-top: -60px;
+}
+
+.title {
+  font-family: "Lobster";
+  font-size: 90px;
+  animation: fadeIn 0.9s ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.animated-text-field {
+  min-width: 610px;
+  min-height: 30px;
+  padding: 15px;
+  background-color: #FFF;
+  border-radius: 6px;
+  border: 2px solid #666;
+}
+
+@keyframes blink {
+  0% {
+    background-color: inherit;
+  }
+  14% {
+    background-color: inherit;
+  }
+  15% {
+    background-color: #000;
+  }
+  85% {
+    background-color: #000;
+  }
+  86% {
+    background-color: inherit;
+  }
+  100% {
+    background-color: inherit;
+  }
+}
+.description {
+  display: inline-block;
+  font-size: 21px;
+  transform: translateY(-8px);
+  font-family: "Work Sans";
+  background: inherit;
+}
+
+.description::after {
+  content: "";
+  display: inline-block;
+  transform: translateY(25%);
+  font-size: 21px;
+  height: 1.5em;
+  width: 2px;
+  background-color: #000;
+  animation-name: blink;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+.btn {
+  margin-top: 42px;
+  font-family: "Work Sans";
+  border: none;
+  border-radius: 4px;
+  padding: 14px 55px;
+  background-color: rgb(44, 100, 197);
+  color: #FFF;
+  font-size: 21px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px 0 var(--accent-contrast-color);
+}
+
+.btn:hover {
+  background-color: rgb(99, 138, 206);
+}
+
+/*# sourceMappingURL=index.css.map */
