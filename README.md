@@ -18,6 +18,3 @@ Frontend:
 - HTML
 - CSS
 - SASS
-
-You can test the app at:
-https://quick-chat-test.herokuapp.com/
